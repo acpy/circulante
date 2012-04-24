@@ -2321,8 +2321,7 @@
 8573231238	417	Microsoft Windows 2000 Server Curso Básico & Rápido	Battisti, Julio	
 8534613443	157	Montagem e configuração de PCs	Vasconcelos, Laércio	
 8532511015	263	Harry Potter e a Pedra Filosofal (Vol. I)	Rowling, J.K.	
-8571949980	144	Sistemas de Informação Versus Tecnologias da Informação - Um Impasse
- Empresarial	Figueiredo de Oliveira, Jayr	
+8571949980	144	Sistemas de Informação Versus Tecnologias da Informação - Um Impasse Empresarial	Figueiredo de Oliveira, Jayr	
 8534613044	417	Crises Monetárias	Krugman, Paul	
 8573931426	178	KYLIX A Ferramenta Linux para Programadores	Dias, Adilson de Souza	
 8571947961	292	Criação de Sites com o Dreamweaver 4 em Português	Alves, William Pereira	
