@@ -12,7 +12,7 @@ from .forms import PublicacaoModelForm
 
 def busca(request):
     erros = []
-    pubs = []
+    pubs = None
     q = ''
     if 'q' in request.GET:
         q = request.GET['q']
@@ -26,8 +26,11 @@ def busca(request):
                 pubs = Publicacao.objects.filter(id_padrao=isbn)
             else:    
                 pubs = Publicacao.objects.filter(titulo__icontains=q)
-    return render(request, 'catalogo/busca.html', 
-        {'erros': erros, 'publicacoes': pubs, 'q': q})
+    vars_template = {'erros': erros, 'q': q}
+    if pubs is not None:
+        vars_template['publicacao'] = pubs
+        vars_template['pesquisa'] = True
+    return render(request, 'catalogo/busca.html', vars_template)
 
 def catalogar(request):
     if request.method != 'POST':
@@ -36,7 +39,8 @@ def catalogar(request):
         formulario = PublicacaoModelForm(request.POST)
         if formulario.is_valid():
             formulario.save()
-            return HttpResponseRedirect(reverse('busca'))   
+            titulo = formulario.cleaned_data['titulo']
+            return HttpResponseRedirect(reverse('busca')+'?q='+titulo)   
     return render(request, 'catalogo/catalogar.html',
         {'formulario':formulario})    
 

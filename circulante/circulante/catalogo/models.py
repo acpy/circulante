@@ -20,5 +20,3 @@ class Credito(models.Model):
     nome = models.CharField(max_length=256)
     papel = models.CharField(max_length=32, blank=True)
     publicacao = models.ForeignKey(Publicacao)
-
-    

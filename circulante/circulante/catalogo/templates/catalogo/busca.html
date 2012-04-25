@@ -17,21 +17,24 @@
     </form>
 <hr>    
    
-{% if publicacoes %}
+{% if pesquisa %}
+    {% if publicacoes %}
 
-<h2>{{publicacoes|length}} publicaç{{publicacoes|pluralize:"ão,ões"}} encontrada{{publicacoes|pluralize}}.</h2>
+        <h2>{{publicacoes|length}} 
+            publicaç{{publicacoes|pluralize:"ão,ões"}} encontrada{{publicacoes|pluralize}}.</h2>
    
-<table>   
-    {% for pub in publicacoes %}
-        <tr>
-            <td>{{pub.id_padrao}}</td>
-            <td>{{pub.titulo}}</td>
+        <table>   
+            {% for pub in publicacoes %}
+                <tr>
+                    <td>{{pub.id_padrao}}</td>
+                    <td>{{pub.titulo}}</td>
             
-        </tr>
-    {% endfor %}
-</table>   
-{% else %}
-    Nenhuma publicação encontrada com o termo '{{q}}'.
+                </tr>
+            {% endfor %}
+        </table>   
+    {% else %}
+        Nenhuma publicação encontrada com o termo '{{q}}'.
+    {% endif %}   
 {% endif %}   
     
 </body>
