@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Busca</title>
+</head>
+<body>
+    <h1>Busca de publicações</h1>
+    {% if erros %}
+        <ul>
+            {% for erro in erros %}
+            <li>{{ erro }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form action="" method="get">
+        <input type="text" name="q" value="{{q}}">
+        <input type="submit" value="Buscar">
+    </form>
+<hr>    
+   
+{% if publicacoes %}
+
+<h2>{{publicacoes|length}} publicaç{{publicacoes|pluralize:"ão,ões"}} encontrada{{publicacoes|pluralize}}.</h2>
+   
+<table>   
+    {% for pub in publicacoes %}
+        <tr>
+            <td>{{pub.id_padrao}}</td>
+            <td>{{pub.titulo}}</td>
+            
+        </tr>
+    {% endfor %}
+</table>   
+{% else %}
+    Nenhuma publicação encontrada com o termo '{{q}}'.
+{% endif %}   
+    
+</body>
+</html>

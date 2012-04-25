@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Catalogar</title>
+</head>
+<body>
+    <h1>Catalogar publicação</h1>
+    {% if erros %}
+        <ul>
+            {% for erro in erros %}
+            <li>{{ erro }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table border="1">
+            {{ formulario.as_table }}
+            <tr><td><input type="submit" value="Buscar"></td></tr>
+        </table>
+    </form>
+<hr>    
+    
+</body>
+</html>
