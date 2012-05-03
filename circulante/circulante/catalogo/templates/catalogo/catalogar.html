@@ -15,7 +15,12 @@
         {% csrf_token %}
         <table border="1">
             {{ formulario.as_table }}
-            <tr><td><input type="submit" value="Buscar"></td></tr>
+            <tr><td colspan="2">
+                <table border="1">
+                    {{ formset.as_table }}
+                </table>
+            </td></tr>
+            <tr><td><input type="submit" value="Enviar"></td></tr>
         </table>
     </form>
 <hr>    
