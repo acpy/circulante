@@ -3,6 +3,10 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+import os
+
+PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -70,6 +74,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_PATH, "static"),
 )
 
 # List of finder classes that know how to find static files in
@@ -109,6 +114,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_PATH, "templates"),
 )
 
 INSTALLED_APPS = (
@@ -158,8 +164,6 @@ LOGGING = {
 # configuracoes especificas do Circulante
 AUTH_PROFILE_MODULE = 'emprestimo.Participante'
 
-import os
-PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 execfile(os.path.join(PROJECT_PATH,'settings_local.include'))
 
 
