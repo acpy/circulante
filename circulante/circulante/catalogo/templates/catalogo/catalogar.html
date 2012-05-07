@@ -1,8 +1,9 @@
-<html>
-<head>
-    <title>Catalogar</title>
-</head>
-<body>
+{% extends 'base.html' %}
++
+{% block chamada %}Catalogar{% endblock %}
++
+{% block corpo %}
+
     <h1>Catalogar publicação</h1>
     {% if erros %}
         <ul>
@@ -25,5 +26,4 @@
     </form>
 <hr>    
     
-</body>
-</html>
+{% endblock corpo %}
